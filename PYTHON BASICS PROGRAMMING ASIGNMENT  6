@@ -1,0 +1,270 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fe3852a2-875d-4c66-b63a-67c7022353af",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "5. Write a Python Program for cube sum of first n natural numbers?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "41f47848-61f2-4684-b2ea-7d0faf8054bc",
+   "metadata": {},
+   "source": [
+    "1. Write a Python Program to Display Fibonacci Sequence Using Recursion?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "badf9c84-6de1-4d79-9a20-697f539e4547",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "fibbonacci sequence \n",
+      "0\n",
+      "1\n",
+      "1\n",
+      "2\n",
+      "3\n",
+      "5\n",
+      "8\n",
+      "13\n",
+      "21\n",
+      "34\n"
+     ]
+    }
+   ],
+   "source": [
+    "def rec_fib(n):\n",
+    "    if n <=1:\n",
+    "        return n\n",
+    "    else:\n",
+    "        return(rec_fib(n-1) + rec_fib(n-2))\n",
+    "    \n",
+    "nterms = 10\n",
+    "# check if the number of terms is valid\n",
+    "\n",
+    "if nterms <=0:\n",
+    "    print(\"Enter a positive integer\")\n",
+    "else :\n",
+    "    print(\"fibbonacci sequence \")\n",
+    "    for i in range(nterms):\n",
+    "        print(rec_fib(i))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "58a59da5-a963-4eba-9bb8-7e889b49f264",
+   "metadata": {},
+   "source": [
+    "2. Write a Python Program to Find Factorial of Number Using Recursion?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "e1c0f2fa-0d22-49b0-8b7b-1121f144f258",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The factorial of 7 is 5040\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Factorial of a number using recursion\n",
+    "\n",
+    "def recur_factorial(n):\n",
+    "    if n == 1:\n",
+    "        return n\n",
+    "    else:\n",
+    "        return n*recur_factorial(n-1)\n",
+    "\n",
+    "num = 7\n",
+    "\n",
+    "# check if the number is negative\n",
+    "if num < 0:\n",
+    "    print(\"Sorry, factorial does not exist for negative numbers\")\n",
+    "elif num == 0:\n",
+    "    print(\"The factorial of 0 is 1\")\n",
+    "else:\n",
+    "    print(\"The factorial of\", num, \"is\", recur_factorial(num))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6600b8d1-5e88-4268-9f9a-1f043390a378",
+   "metadata": {},
+   "source": [
+    "3. Write a Python Program to calculate your Body Mass Index?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "7ae32997-c028-4609-a7d0-42d6ba517fea",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter your height in meters:  5.7\n",
+      "Enter your weight in kg:  64\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Your BMI is:  1.97\n",
+      "You are underweight.\n"
+     ]
+    }
+   ],
+   "source": [
+    "def bodymassindex(height, weight):\n",
+    "    return round((weight / height**2),2)\n",
+    "\n",
+    "h = float(input(\"Enter your height in meters: \"))\n",
+    "w = float(input(\"Enter your weight in kg: \"))\n",
+    "\n",
+    "bmi = bodymassindex(h, w)\n",
+    "print(\"Your BMI is: \", bmi)\n",
+    "\n",
+    "if bmi <= 18.5:\n",
+    "    print(\"You are underweight.\")\n",
+    "elif 18.5 < bmi <= 24.9:\n",
+    "    print(\"Your weight is normal.\")\n",
+    "elif 25 < bmi <= 29.29:\n",
+    "    print(\"You are overweight.\")\n",
+    "else:\n",
+    "    print(\"You are obese.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3d14c06d-f94b-46b9-a19a-729bc325b3f7",
+   "metadata": {},
+   "source": [
+    "4. Write a Python Program to calculate the natural logarithm of any number?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "0d01c70b-daa1-4f78-856a-d217a2a4b689",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter the number:  5\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The value is: 1.6094379124341003\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "number = int(input(\"Enter the number: \"))\n",
+    "             \n",
+    "ans = math.log(number)\n",
+    "             \n",
+    "print(\"The value is:\",ans)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "60ebf14b-ad20-4ce8-9610-b9253df6930b",
+   "metadata": {},
+   "source": [
+    "5. Write a Python Program for cube sum of first n natural numbers?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "76426b1e-8501-464a-b925-d88cb7adeeef",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "225\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "\n",
+    "# Returns the sum of series\n",
+    "def sumOfSeries(n):\n",
+    "\tsum = 0\n",
+    "\tfor i in range(1, n+1):\n",
+    "\t\tsum +=pow(i,3)\n",
+    "\t\t\n",
+    "\treturn sum\n",
+    "\n",
+    "\n",
+    "# Driver Function\n",
+    "n = int(input(\"Enter the N\"))\n",
+    "print(sumOfSeries(n))\n",
+    "\n",
+    "# Code Contributed by Lokesh Sharma;\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "33af4af0-8123-4ad2-8ce1-0bd580d614f4",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
