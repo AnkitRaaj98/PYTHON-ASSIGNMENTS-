@@ -1,0 +1,402 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "8677b4ca-4c3b-4f2c-826a-7cb9975f8a99",
+   "metadata": {},
+   "source": [
+    "1. Write a Python program to find sum of elements in list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "dfcc48c8-72de-424d-8331-037996b37bae",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The sum of element of list: 29\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = 0\n",
+    "\n",
+    "\n",
+    "l1 = [2,4,5,6,8,4]\n",
+    "\n",
+    "for ele in range(0,len(l1)):\n",
+    "    s = s + l1[ele]\n",
+    "print(\"The sum of element of list:\", s)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ce2a07f1-54e0-4f5d-9ee2-56be2d4ab8c2",
+   "metadata": {},
+   "source": [
+    "2. Write a Python program to Multiply all numbers in the list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "42018568-1f9e-4c14-be62-548caf741bc7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6\n"
+     ]
+    }
+   ],
+   "source": [
+    "def multiplylist(mylist):\n",
+    "    result = 1\n",
+    "    for x in mylist:\n",
+    "        result = result * x\n",
+    "    return result\n",
+    "\n",
+    "l = [1,2,3]\n",
+    "\n",
+    "print(multiplylist(l))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "719dd8d3-8868-4f3b-9163-f28f67ef9d6a",
+   "metadata": {},
+   "source": [
+    "3. Write a Python program to find smallest number in a list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "c1f8f3e9-63d0-4552-9511-02aaffc190de",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The smallest element is: 4\n"
+     ]
+    }
+   ],
+   "source": [
+    "l = [24, 35,66,4, 76,23,55]\n",
+    "\n",
+    "l.sort()\n",
+    "\n",
+    "print(\"The smallest element is:\",l[0])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8ca4dcca-9104-4ab0-a2f0-8eef4fe20ff5",
+   "metadata": {},
+   "source": [
+    "4. Write a Python program to find largest number in a list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "f7ceab33-b6a2-4719-922c-dc29f77f776e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The largest element is: 76\n"
+     ]
+    }
+   ],
+   "source": [
+    "l = [24, 35,66,4, 76,23,55]\n",
+    "\n",
+    "l.sort()\n",
+    "\n",
+    "print(\"The largest element is:\",l[-1])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f3b14726-fa2a-418e-9dad-49e24a7335cc",
+   "metadata": {},
+   "source": [
+    "5. Write a Python program to find second largest number in a list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "4f1a76a4-f6f0-4fef-8d85-76ab9ebb8003",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The second largest element is: 66\n"
+     ]
+    }
+   ],
+   "source": [
+    "l = [24, 35,66,4, 76,23,55]\n",
+    "\n",
+    "l.sort()\n",
+    "\n",
+    "print(\"The second largest element is:\",l[-2])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0af28ec6-821e-4186-b9cc-3ac0f9864814",
+   "metadata": {},
+   "source": [
+    "6. Write a Python program to find N largest elements from a list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "d458ba0e-0dc3-4d0f-9020-7cd4a9083120",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[86, 74]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def nmaxelements(l1,N):\n",
+    "    final_list = []\n",
+    "    \n",
+    "    for i in range(0,N):\n",
+    "        max1 = 0\n",
+    "        \n",
+    "        for j in range(len(l1)):\n",
+    "            if l1[j] > max1:\n",
+    "                max1 = l1[j]\n",
+    "                \n",
+    "        l1.remove(max1)\n",
+    "        final_list.append(max1)\n",
+    "                \n",
+    "    print(final_list)\n",
+    "    \n",
+    "l1 = [2,4,35,64,74,65,86,22,43,1]\n",
+    "N = 2\n",
+    "\n",
+    "nmaxelements(l1,N)\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "26712623-bd40-4143-8c9c-9a1e4e6a2702",
+   "metadata": {},
+   "source": [
+    "7. Write a Python program to print even numbers in a list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "d69ce97d-05f1-4fbd-8b5f-681cf6519ac6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Even number: 2\n",
+      "Even number: 4\n",
+      "Even number: 6\n",
+      "Even number: 88\n",
+      "Even number: 12\n",
+      "Even number: 16\n"
+     ]
+    }
+   ],
+   "source": [
+    "l1 = [2,3,5,4,6,88,12,15,16]\n",
+    "\n",
+    "for num in l1:\n",
+    "    \n",
+    "    if num % 2 == 0:\n",
+    "        print(\"Even number:\",num)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "74c3c4e9-e9a5-48df-9156-cd17f527adef",
+   "metadata": {},
+   "source": [
+    "8. Write a Python program to print odd numbers in a List?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "cd156648-4f5e-4df6-9534-23727f504d92",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Odd number: 3\n",
+      "Odd number: 5\n",
+      "Odd number: 15\n"
+     ]
+    }
+   ],
+   "source": [
+    "l1 = [2,3,5,4,6,88,12,15,16]\n",
+    "\n",
+    "for num in l1:\n",
+    "    \n",
+    "    if num % 2 != 0:\n",
+    "        print(\"Odd number:\",num)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b1de702a-4f07-4016-8978-573bf681eebb",
+   "metadata": {},
+   "source": [
+    "9. Write a Python program to Remove empty List from List?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "213ea8c6-baeb-464d-a756-f9f7604d2c80",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original list:[2, 3, 5, [], 5, 6, [], 44, 53, 21, [], 54, 23, 44, [], 85]\n",
+      "list after empty list removal:[2, 3, 5, 5, 6, 44, 53, 21, 54, 23, 44, 85]\n"
+     ]
+    }
+   ],
+   "source": [
+    "test_list = [2,3,5,[],5,6,[],44,53,21,[],54,23,44,[],85]\n",
+    "\n",
+    "print(\"Original list:\" + str(test_list))\n",
+    "\n",
+    "res = [ele for ele in test_list if ele != []]\n",
+    "\n",
+    "print(\"list after empty list removal:\" + str(res))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "47073b0e-94a1-4cb2-ac30-5e6e0acfd0b5",
+   "metadata": {},
+   "source": [
+    "10. Write a Python program to Cloning or Copying a list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "47ae5931-171b-4366-9003-a65003d05a41",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original List: [4, 8, 2, 10, 15, 18]\n",
+      "After Cloning: [4, 8, 2, 10, 15, 18]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def Cloning(li1):\n",
+    "\tli_copy = li1[:]\n",
+    "\treturn li_copy\n",
+    "\n",
+    "\n",
+    "\n",
+    "li1 = [4, 8, 2, 10, 15, 18]\n",
+    "li2 = Cloning(li1)\n",
+    "print(\"Original List:\", li1)\n",
+    "print(\"After Cloning:\", li2)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ddb113d0-fc8b-432a-8b8a-e8f8d2d1107b",
+   "metadata": {},
+   "source": [
+    "11. Write a Python program to Count occurrences of an element in a list?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "ab32b5e8-5fef-47d7-a1c6-4aa62e210347",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2 hasn occured 4 times\n"
+     ]
+    }
+   ],
+   "source": [
+    "def countx(lst,x):\n",
+    "    count = 0 \n",
+    "    for ele in lst:\n",
+    "        if (ele == x):\n",
+    "            count = count + 1\n",
+    "    return count\n",
+    "        \n",
+    "lst = [ 2,4,53,4,2,5,6,2,7,8,2,5,45,65,8]\n",
+    "x = 2\n",
+    "\n",
+    "print('{} hasn occured {} times'.format(x,countx(lst,x)))\n",
+    "        "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
